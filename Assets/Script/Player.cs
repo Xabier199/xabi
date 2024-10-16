@@ -3,24 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerMovement2D : MonoBehaviour
+public class PLayerMovement : MonoBehaviourPunCallbacks
 {
-    // Velocidad de movimiento del jugador
-    public float speed = 5f;
+    private Rigidbody2D rb;
+    private float horizontal;
+    [SerializeField]
+    private float jumpforce = 1.0f;
+    private bool grounded;
+    public float velocidad;
 
-    // Update se llama una vez por frame
+    void Start()//Coger el RigidBody del objeto al que esté asignado el script
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        // Obtén el input horizontal (A/D o flechas izquierda/derecha)
-        float horizontal = Input.GetAxis("Horizontal");
+        if (photonView.IsMine)
+        {
+            horizontal = Input.GetAxis("Horizontal");// Coger el input del teclado, con valores del -1 al 1
 
-        // Obtén el input vertical (W/S o flechas arriba/abajo)
-        float vertical = Input.GetAxis("Vertical");
+            Debug.DrawRay(transform.position, Vector2.down, Color.red);
+            RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
 
-        // Crear un vector de movimiento en 2D
-        Vector2 movement = new Vector2(horizontal, vertical);
+            if (hitGround) grounded = true;
+            else grounded = false;
 
-        // Mover al jugador en el espacio 2D usando ese vector
-        transform.Translate(movement * speed * Time.deltaTime);
+            if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.W)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            {
+                Jump();
+            }
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (photonView.IsMine)
+        {
+            rb.velocity = new Vector2(horizontal*velocidad, rb.velocity.y);
+        }
+    }
+
+    private void Jump()
+    {
+        if (photonView.IsMine)
+        {
+            rb.AddForce(new Vector2(0, jumpforce));
+        }
     }
 }

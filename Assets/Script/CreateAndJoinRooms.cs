@@ -8,6 +8,8 @@ using TMPro;
 public class ConnectAndJoinRooms : MonoBehaviourPunCallbacks
 {
 
+   // public PhotonView playerPrefab;
+   // public Transform spawnPoint;
 
     public TMP_InputField createInput;
     public TMP_InputField joinInput;
@@ -27,6 +29,7 @@ public class ConnectAndJoinRooms : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Game");
+    //    PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, spawnPoint.rotation);
     }
 
 
