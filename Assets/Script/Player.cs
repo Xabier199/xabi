@@ -12,17 +12,22 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
     private bool grounded;
     public float velocidad;
     private Animator animator;
+    [SerializeField]
+    private int playerViewID;
 
 
     void Start()//Coger el RigidBody del objeto al que esté asignado el script
     {
-
+        int playerViewID = GetComponent<PhotonView>().ViewID;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+
+
+
         if (photonView.IsMine)
         {
             //Girar al jugador
