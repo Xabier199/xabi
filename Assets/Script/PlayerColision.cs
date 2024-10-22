@@ -15,10 +15,18 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
     [SerializeField]
     private int playerViewID;
 
+    private float subiendoAnterior;
+    [SerializeField]
+    public float umbral = 0.001f;  // Umbral para detectar el cambio significativo en Y
+
+    private Collider2D objectCollider; // Para controlar las colisiones
+
 
     void Start()//Coger el RigidBody del objeto al que esté asignado el script
     {
-        int playerViewID = GetComponent<PhotonView>().ViewID;
+        subiendoAnterior = transform.position.y;
+        objectCollider = gameObject.GetComponent<Collider2D>();
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -50,6 +58,38 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
                 Jump();
             }
 
+            float subiendoActual = transform.position.y;
+
+            Debug.Log("Posición actual: " + subiendoActual + ", Posición anterior: " + subiendoAnterior);
+
+
+            // Comparamos las posiciones con un umbral para evitar problemas de precisión
+            if (subiendoActual > subiendoAnterior + umbral)
+            {
+                if (objectCollider.enabled) // Verifica si el collider está activo
+                {
+                    objectCollider.enabled = false; // Desactiva el collider (sin colisiones)
+                    Debug.Log("Está subiendo, colisión desactivada");
+                }
+            }
+            else if (subiendoActual < subiendoAnterior - umbral)
+            {
+                if (!objectCollider.enabled) // Verifica si el collider está desactivado
+                {
+                    objectCollider.enabled = true; // Activa el collider (colisiones activas)
+                    Debug.Log("Está bajando, colisión activada");
+                }
+            }
+
+            // Actualizar la posición anterior solo después de la comparación
+            subiendoAnterior = subiendoActual;
+
+
+
+
+
+
+
         }
 
 
@@ -60,7 +100,7 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            rb.velocity = new Vector2(horizontal*velocidad, rb.velocity.y);
+            rb.velocity = new Vector2(horizontal * velocidad, rb.velocity.y);
         }
     }
 

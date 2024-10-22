@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
     // Se llama al iniciar el script
+    [SerializeField]
+    private float Tiempo;
     private void Start()
     {
         // Conectarse a Photon utilizando los ajustes configurados
@@ -35,7 +37,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
         {
             // Esperar 5 segundos
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(Tiempo);
 
             // Cargar la escena del lobby después de la espera
             SceneManager.LoadScene("Lobby");
