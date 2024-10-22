@@ -30,7 +30,7 @@ public class Colision : MonoBehaviourPunCallbacks
         
         Debug.Log("Posición actual: " + subiendoActual + ", Posición anterior: " + subiendoAnterior);
 
-        if (Player == null)
+       /* if (Player == null)
         {
             // Buscar el GameObject por etiqueta o nombre
             
@@ -42,7 +42,7 @@ public class Colision : MonoBehaviourPunCallbacks
                 Debug.Log("Player encontrado, posición inicial en Y: " + subiendoAnterior);
             }
             return; // Espera hasta que se encuentre el objeto
-        }
+        }*/
 
         // Comparamos las posiciones con un umbral para evitar problemas de precisión
         if (subiendoActual > subiendoAnterior + umbral)
