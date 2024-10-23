@@ -246,7 +246,7 @@ MonoBehaviour:
   jumpforce: 1500
   velocidad: 10
   playerViewID: 0
-  umbral: 0.001
+  margen: 0.001
 --- !u!114 &-2261586687738693305
 MonoBehaviour:
   m_ObjectHideFlags: 0

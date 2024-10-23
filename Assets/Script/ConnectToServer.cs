@@ -14,6 +14,11 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     {
         // Conectarse a Photon utilizando los ajustes configurados
         PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.SendRate = 60; // Cambia a la frecuencia deseada
+       
+
+        // Otras configuraciones si es necesario
+        PhotonNetwork.SerializationRate = 20; // Ajusta según sea necesario
     }
 
     // Se llama cuando se conecta correctamente al Master
