@@ -17,9 +17,11 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
 
     private float subiendoAnterior;
     [SerializeField]
-    public float umbral = 0.001f;  // Umbral para detectar el cambio significativo en Y
+    public float margen = 0.001f;  // Umbral para detectar el cambio significativo en Y
 
     private Collider2D objectCollider; // Para controlar las colisiones
+
+    
 
 
     void Start()//Coger el RigidBody del objeto al que esté asignado el script
@@ -64,7 +66,7 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
 
 
             // Comparamos las posiciones con un umbral para evitar problemas de precisión
-            if (subiendoActual > subiendoAnterior + umbral)
+            if (subiendoActual > subiendoAnterior + margen)
             {
                 if (objectCollider.enabled) // Verifica si el collider está activo
                 {
@@ -72,7 +74,7 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
                     Debug.Log("Está subiendo, colisión desactivada");
                 }
             }
-            else if (subiendoActual < subiendoAnterior - umbral)
+            else if (subiendoActual < subiendoAnterior - margen)
             {
                 if (!objectCollider.enabled) // Verifica si el collider está desactivado
                 {

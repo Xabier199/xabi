@@ -40,7 +40,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
             yield return new WaitForSeconds(Tiempo);
 
             // Cargar la escena del lobby después de la espera
-            SceneManager.LoadScene("Lobby");
+            SceneManager.LoadScene("Título");
         }
         else
         {
