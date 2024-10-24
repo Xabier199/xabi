@@ -21,6 +21,8 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
 
     private Collider2D objectCollider; // Para controlar las colisiones
 
+    private Vector2 direction;
+
     
 
 
@@ -47,7 +49,22 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
                 transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
 
-            horizontal = Input.GetAxis("Horizontal");// Coger el input del teclado, con valores del -1 al 1
+            if (horizontal < 0)
+            {
+                animator.SetBool("Running", true);
+            }
+            else if (horizontal > 0)
+
+            {
+                animator.SetBool("Running", true);
+            }
+            else
+            {
+                animator.SetBool("Running", false);
+            }
+
+
+                horizontal = Input.GetAxis("Horizontal");// Coger el input del teclado, con valores del -1 al 1
 
 
             Debug.DrawRay(transform.position, Vector2.down * 2.5f, Color.red);
@@ -86,12 +103,7 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
             // Actualizar la posición anterior solo después de la comparación
             subiendoAnterior = subiendoActual;
 
-
-
-
-
-
-
+           
         }
 
 

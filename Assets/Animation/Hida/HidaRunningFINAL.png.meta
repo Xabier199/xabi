@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36cffcad7b0159843b9fc773a2a71c08
+guid: 23dcb400808d2b545ab66f485d810b4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,7 +147,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HidaRunningFINAL_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 11
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598433b1d3b48d148a4156ab7c03bbad
+      internalID: 1464340803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HidaRunningFINAL_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 11
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6891867f0ad0afe4ab7ef59761eb7ae5
+      internalID: 1864241706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HidaRunningFINAL_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 11
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ab28518b891cf45958b85bb8febd66
+      internalID: 306557857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HidaRunningFINAL_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 11
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2251a46df4c55d1499eeccbb607cb77d
+      internalID: 860041294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HidaRunningFINAL_4
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 11
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ac5ca2163be1a49b144a4eb78ceaac
+      internalID: -1243210689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HidaRunningFINAL_5
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 11
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c79f095687ab4f42820eaca030b1199
+      internalID: 888665972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +284,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HidaRunningFINAL_0: 1464340803
+      HidaRunningFINAL_1: 1864241706
+      HidaRunningFINAL_2: 306557857
+      HidaRunningFINAL_3: 860041294
+      HidaRunningFINAL_4: -1243210689
+      HidaRunningFINAL_5: 888665972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
