@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc52dbfa6ea13a34ab80304c5f53ce9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpforce: 1500
+  jumpforce: 1450
   velocidad: 10
   playerViewID: 0
   margen: 0.001
@@ -263,8 +263,8 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Running
   m_SynchronizeLayers:
-  - SynchronizeType: 1
+  - SynchronizeType: 0
     LayerIndex: 0

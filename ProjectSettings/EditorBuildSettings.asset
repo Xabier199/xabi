@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 849272c161821204bbaea2f645b8229b
   - enabled: 1
-    path: "Assets/Scenes/Selecci\xF3nPersonajes.unity"
-    guid: d7d8dfce364026743b319ee02cb3a0e3
-  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 754d1c126a60a5c42ae7c15fb7fb549b
   m_configObjects: {}
