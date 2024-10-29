@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -4578591933002087191}
   - component: {fileID: 6588729685810988594}
   - component: {fileID: -7878717451578323554}
+  - component: {fileID: 3645492497429725582}
+  - component: {fileID: 7385938971159801471}
   m_Layer: 0
   m_Name: Barbara
   m_TagString: Untagged
@@ -86,7 +88,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7640439968893444484
@@ -103,9 +105,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PositionModel:
     SynchronizeEnabled: 1
-    TeleportEnabled: 1
+    TeleportEnabled: 0
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
     ExtrapolateOption: 0
@@ -114,7 +116,7 @@ MonoBehaviour:
     ExtrapolateNumberOfStoredPositions: 1
   m_RotationModel:
     SynchronizeEnabled: 1
-    InterpolateOption: 1
+    InterpolateOption: 0
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
   m_ScaleModel:
@@ -142,6 +144,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7640439968893444484}
+  - {fileID: 7385938971159801471}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -228,3 +231,46 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3645492497429725582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753069215843338955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc52dbfa6ea13a34ab80304c5f53ce9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpforce: 1450
+  velocidad: 10
+  playerViewID: 0
+  margen: 0.001
+--- !u!114 &7385938971159801471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753069215843338955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Running
+  - Type: 4
+    SynchronizeType: 2
+    Name: Subiendo
+  - Type: 4
+    SynchronizeType: 2
+    Name: EnSuelo
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0

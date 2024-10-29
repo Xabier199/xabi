@@ -58,7 +58,7 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
             {
                 animator.SetBool("Running", true);
             }
-            else
+            else if(horizontal == 0)
             {
                 animator.SetBool("Running", false);
             }
@@ -69,8 +69,16 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
 
             Debug.DrawRay(transform.position, Vector2.down * 2.5f, Color.red);
             RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, 2.5f);
-            if (hitGround) grounded = true;
-            else grounded = false;
+            if (hitGround)
+            {
+                animator.SetBool("EnSuelo", true);
+                grounded = true;
+            }
+            else
+            {
+                animator.SetBool("EnSuelo", false);
+                grounded = false;
+            }
 
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
             {
@@ -89,6 +97,7 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
                 {
                     objectCollider.enabled = false; // Desactiva el collider (sin colisiones)
                     Debug.Log("Está subiendo, colisión desactivada");
+                    animator.SetBool("Subiendo", true);
                 }
             }
             else if (subiendoActual < subiendoAnterior - margen)
@@ -97,6 +106,8 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
                 {
                     objectCollider.enabled = true; // Activa el collider (colisiones activas)
                     Debug.Log("Está bajando, colisión activada");
+                    animator.SetBool("Subiendo", false);
+
                 }
             }
 
