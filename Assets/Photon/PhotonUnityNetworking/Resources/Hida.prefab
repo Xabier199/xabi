@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: -4578591933002087191}
   - component: {fileID: 6588729685810988594}
   - component: {fileID: -7878717451578323554}
-  - component: {fileID: 8547751852230718279}
   - component: {fileID: -2261586687738693305}
+  - component: {fileID: 1049010498004041229}
+  - component: {fileID: 5011352299817936165}
   m_Layer: 0
   m_Name: Hida
   m_TagString: PlayerA
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -101377356, guid: 30cabc616dee221408b14d4fc4b43b12, type: 3}
+  m_Sprite: {fileID: -562465944, guid: d7bea3b56508fe1429ce49fcf389e605, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -180,8 +181,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017318726, y: 0.008333325}
-  m_Size: {x: 0.4562378, y: 0.82785964}
+  m_Offset: {x: 0.06936264, y: -0.021734536}
+  m_Size: {x: 0.42154694, y: 0.88799536}
   m_Direction: 0
 --- !u!50 &6588729685810988594
 Rigidbody2D:
@@ -220,7 +221,7 @@ Animator:
   m_GameObject: {fileID: 7753069215843338955}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57d57413b63fb9f4db6ec53b52fd54fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: c5ab4e60d03ce7e4a9b1f35a5d1b483e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -231,22 +232,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8547751852230718279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753069215843338955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc52dbfa6ea13a34ab80304c5f53ce9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpforce: 1450
-  velocidad: 10
-  playerViewID: 0
-  margen: 0.001
 --- !u!114 &-2261586687738693305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,8 +248,78 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Running
+  - Type: 4
+    SynchronizeType: 0
+    Name: Subiendo
+  - Type: 4
+    SynchronizeType: 0
+    Name: EnSuelo
+  - Type: 4
+    SynchronizeType: 0
+    Name: Ataque1
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &1049010498004041229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753069215843338955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8604d30b0242864c9464f2c2e1a4fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpforce: 1450
+  velocidad: 10
+  playerViewID: 0
+  margen: 0.001
+--- !u!61 &5011352299817936165
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753069215843338955}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.41384888, y: -0.01529634}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.93, y: 0.97}
+    newSize: {x: 0.93, y: 0.98}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.29264832, y: 0.94940734}
+  m_EdgeRadius: 0

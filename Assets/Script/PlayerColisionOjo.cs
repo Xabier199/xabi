@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PLayerMovement : MonoBehaviourPunCallbacks
+public class PLayerMovementOjo : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D rb;
     private float horizontal;
@@ -44,8 +44,10 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
         {
             //Girar al jugador
             if (horizontal < 0)
-                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                transform.localRotation = Quaternion.Euler(0f, 180f, -40f);
             else if (horizontal > 0)
+                transform.localRotation = Quaternion.Euler(0f, 0f, -40f);
+            else if (horizontal == 0)
                 transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
 
@@ -84,6 +86,11 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
             {
                 Jump();
+            }
+
+            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            {
+                Ataque();
             }
 
             float subiendoActual = transform.position.y;
@@ -135,6 +142,16 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             rb.AddForce(new Vector2(0, jumpforce));
+        }
+    }
+
+    private void Ataque()
+    {
+        if (photonView.IsMine)
+        {
+            animator.SetBool("Ataque1", true);
+            animator.SetBool("Ataque1", false);
+
         }
     }
 }

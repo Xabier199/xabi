@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PLayerMovement : MonoBehaviourPunCallbacks
+public class PLayerMovementHida : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D rb;
     private float horizontal;
@@ -61,7 +61,6 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
             else if(horizontal == 0)
             {
                 animator.SetBool("Running", false);
-                animator.SetBool("Running", false);
             }
 
 
@@ -84,6 +83,11 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
             {
                 Jump();
+            }
+
+            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            {
+                Ataque();
             }
 
             float subiendoActual = transform.position.y;
@@ -136,5 +140,18 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
         {
             rb.AddForce(new Vector2(0, jumpforce));
         }
+    }
+
+    private void Ataque()
+    {
+        if (photonView.IsMine)
+        {
+            animator.SetBool("Ataque1", true);
+        }
+    }
+
+    private void CancelarAtq()
+    {
+        animator.SetBool("Ataque1", false);
     }
 }

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: -4578591933002087191}
   - component: {fileID: 6588729685810988594}
   - component: {fileID: -7878717451578323554}
-  - component: {fileID: 3645492497429725582}
   - component: {fileID: 7385938971159801471}
+  - component: {fileID: 7328327112182191193}
   m_Layer: 0
   m_Name: Barbara
   m_TagString: Untagged
@@ -220,7 +220,7 @@ Animator:
   m_GameObject: {fileID: 7753069215843338955}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 99e8be859d1c52c4f9ceb32c2bef3af2, type: 2}
+  m_Controller: {fileID: 9100000, guid: eb2c95d2f850a6a4a84ac6b7782688d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -231,22 +231,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3645492497429725582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753069215843338955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc52dbfa6ea13a34ab80304c5f53ce9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpforce: 1450
-  velocidad: 10
-  playerViewID: 0
-  margen: 0.001
 --- !u!114 &7385938971159801471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,14 +247,33 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Running
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Subiendo
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: EnSuelo
+  - Type: 4
+    SynchronizeType: 0
+    Name: Ataque1
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &7328327112182191193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753069215843338955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6869e63776265cf4d95f61054216d311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpforce: 1450
+  velocidad: 10
+  playerViewID: 0
+  margen: 0.001

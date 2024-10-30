@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23dcb400808d2b545ab66f485d810b4a
+guid: 66e3c89cd127e844f961b7bc937aa005
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,118 +149,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HidaRunningFINAL_0
+      name: FantasySprite_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 11
-        width: 104
-        height: 90
+        x: 53
+        y: 176
+        width: 52
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 598433b1d3b48d148a4156ab7c03bbad
-      internalID: 1464340803
+      spriteID: ee73e760f64b2424ab6d86dfa3196025
+      internalID: 1490923561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HidaRunningFINAL_1
+      name: FantasySprite_1
       rect:
         serializedVersion: 2
-        x: 124
-        y: 11
-        width: 104
-        height: 90
+        x: 133
+        y: 176
+        width: 51
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6891867f0ad0afe4ab7ef59761eb7ae5
-      internalID: 1864241706
+      spriteID: c399e92fbaeddaa4c87cd9739b3bfb57
+      internalID: -1197957582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HidaRunningFINAL_2
+      name: FantasySprite_2
       rect:
         serializedVersion: 2
-        x: 245
-        y: 11
-        width: 104
-        height: 90
+        x: 259
+        y: 176
+        width: 60
+        height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74ab28518b891cf45958b85bb8febd66
-      internalID: 306557857
+      spriteID: 37a6c9cbc6145774ba463a8c8090239b
+      internalID: -597820980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HidaRunningFINAL_3
+      name: FantasySprite_3
       rect:
         serializedVersion: 2
-        x: 366
-        y: 11
-        width: 104
-        height: 90
+        x: 347
+        y: 176
+        width: 73
+        height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2251a46df4c55d1499eeccbb607cb77d
-      internalID: 860041294
+      spriteID: 263d109ef12e321459fe06127edfe473
+      internalID: -531612989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HidaRunningFINAL_4
+      name: FantasySprite_4
       rect:
         serializedVersion: 2
-        x: 487
-        y: 11
-        width: 104
-        height: 90
+        x: 437
+        y: 176
+        width: 79
+        height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08ac5ca2163be1a49b144a4eb78ceaac
-      internalID: -1243210689
+      spriteID: f478bd74663d90a43b04cccfd8fb6db1
+      internalID: -517267225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HidaRunningFINAL_5
+      name: FantasySprite_5
       rect:
         serializedVersion: 2
-        x: 608
-        y: 11
-        width: 104
-        height: 90
+        x: 531
+        y: 176
+        width: 73
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c79f095687ab4f42820eaca030b1199
-      internalID: 888665972
+      spriteID: 778fa90348b71d64f8f03c6ba1b078f9
+      internalID: 567081542
       vertices: []
       indices: 
       edges: []
@@ -285,12 +285,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HidaRunningFINAL_0: 1464340803
-      HidaRunningFINAL_1: 1864241706
-      HidaRunningFINAL_2: 306557857
-      HidaRunningFINAL_3: 860041294
-      HidaRunningFINAL_4: -1243210689
-      HidaRunningFINAL_5: 888665972
+      FantasySprite_0: 1490923561
+      FantasySprite_1: -1197957582
+      FantasySprite_2: -597820980
+      FantasySprite_3: -531612989
+      FantasySprite_4: -517267225
+      FantasySprite_5: 567081542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

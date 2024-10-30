@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: -4578591933002087191}
   - component: {fileID: 6588729685810988594}
   - component: {fileID: -7878717451578323554}
-  - component: {fileID: 3645492497429725582}
   - component: {fileID: 7385938971159801471}
+  - component: {fileID: -9115500478776018262}
   m_Layer: 0
   m_Name: Ojo
   m_TagString: Untagged
@@ -33,8 +33,8 @@ Transform:
   m_GameObject: {fileID: 7753069215843338955}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 354.4, y: -6.4, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 354.4, y: -6.4451, z: 0}
+  m_LocalScale: {x: 13.618, y: 13.618, z: 13.618}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,15 +80,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1334742973, guid: 689da0eef3cb013419199adf33684534, type: 3}
+  m_Sprite: {fileID: 798434482, guid: 4c39cddadefe4c34a92f0a5dd21a1b83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.19, y: 0.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7640439968893444484
@@ -180,8 +180,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006924439, y: -0.001226425}
-  m_Size: {x: 0.2814514, y: 0.7157402}
+  m_Offset: {x: 0.0005658458, y: -0.032992437}
+  m_Size: {x: 0.1348954, y: 0.23739617}
   m_Direction: 0
 --- !u!50 &6588729685810988594
 Rigidbody2D:
@@ -220,7 +220,7 @@ Animator:
   m_GameObject: {fileID: 7753069215843338955}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 99e8be859d1c52c4f9ceb32c2bef3af2, type: 2}
+  m_Controller: {fileID: 9100000, guid: c3474eda8429f3f439368518b65b0264, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -231,22 +231,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3645492497429725582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753069215843338955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc52dbfa6ea13a34ab80304c5f53ce9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpforce: 1450
-  velocidad: 10
-  playerViewID: 0
-  margen: 0.001
 --- !u!114 &7385938971159801471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +258,19 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &-9115500478776018262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753069215843338955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1899d298dc03c48b30521be446a96b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpforce: 1450
+  velocidad: 10
+  playerViewID: 0
+  margen: 0.001
