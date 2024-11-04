@@ -22,8 +22,11 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
     private Collider2D objectCollider; // Para controlar las colisiones
 
     private Vector2 direction;
+    //Detectar la colisión del golpe
+    private const string HIT_PARAM = "IsHit";
+    private const string PLAYER_HITBOX_TAG = "PlayerHitbox";
 
-    
+
 
 
     void Start()//Coger el RigidBody del objeto al que esté asignado el script
@@ -135,6 +138,14 @@ public class PLayerMovement : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             rb.AddForce(new Vector2(0, jumpforce));
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == PLAYER_HITBOX_TAG)
+        {
+            animator.SetTrigger(HIT_PARAM);
         }
     }
 }

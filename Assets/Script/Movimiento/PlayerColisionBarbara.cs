@@ -23,7 +23,10 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
 
     private Vector2 direction;
 
-    
+    private const string HIT_PARAM = "IsHit";
+    private const string PLAYER_HITBOX_TAG = "BarbaraHit";
+
+
 
 
     void Start()//Coger el RigidBody del objeto al que esté asignado el script
@@ -112,7 +115,6 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
                     objectCollider.enabled = true; // Activa el collider (colisiones activas)
                     Debug.Log("Está bajando, colisión activada");
                     animator.SetBool("Subiendo", false);
-
                 }
             }
 
@@ -155,5 +157,13 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
     private void CancelarAtq()
     {
         animator.SetBool("Ataque1", false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == PLAYER_HITBOX_TAG)
+        {
+            animator.SetTrigger(HIT_PARAM);
+        }
     }
 }

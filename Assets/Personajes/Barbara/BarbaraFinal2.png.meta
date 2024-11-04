@@ -383,9 +383,9 @@ TextureImporter:
       name: BarbaraFinal2_12
       rect:
         serializedVersion: 2
-        x: 183
+        x: 157
         y: 311
-        width: 75
+        width: 101
         height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
