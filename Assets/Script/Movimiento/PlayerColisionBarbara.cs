@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
+public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D rb;
     private float horizontal;
@@ -23,8 +23,21 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
 
     private Vector2 direction;
 
+    private Salud Salud;
+
+    public float cooldownTime = 0.5f; // Tiempo de cooldown en segundos
+    private bool canBeHit = true; // Variable para controlar el cooldown
+
+
     private const string HIT_PARAM = "IsHit";
     private const string PLAYER_HITBOX_TAG = "BarbaraHit";
+
+    // Definimos una variable para el combo
+    private int ataqueCombo = 0;
+    // Definimos el tiempo en segundos para reiniciar el combo
+    private float tiempoReinicioCombo = 0.8f;
+    // Variable para guardar el tiempo del último ataque
+    private float tiempoUltimoAtaque;
 
 
 
@@ -36,6 +49,8 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        Salud = GetComponent<Salud>();
     }
 
     void Update()
@@ -88,14 +103,20 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
                 Jump();
             }
 
-            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)
             {
                 Ataque();
             }
 
+            if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
+            {
+                ataqueCombo = 0;
+                Reseteo();
+            }
+
             float subiendoActual = transform.position.y;
 
-            Debug.Log("Posición actual: " + subiendoActual + ", Posición anterior: " + subiendoAnterior);
+         
 
 
             // Comparamos las posiciones con un umbral para evitar problemas de precisión
@@ -104,7 +125,6 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
                 if (objectCollider.enabled) // Verifica si el collider está activo
                 {
                     objectCollider.enabled = false; // Desactiva el collider (sin colisiones)
-                    Debug.Log("Está subiendo, colisión desactivada");
                     animator.SetBool("Subiendo", true);
                 }
             }
@@ -113,13 +133,14 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
                 if (!objectCollider.enabled) // Verifica si el collider está desactivado
                 {
                     objectCollider.enabled = true; // Activa el collider (colisiones activas)
-                    Debug.Log("Está bajando, colisión activada");
                     animator.SetBool("Subiendo", false);
                 }
             }
 
             // Actualizar la posición anterior solo después de la comparación
             subiendoAnterior = subiendoActual;
+
+            
 
            
         }
@@ -148,22 +169,56 @@ public class PLayerMovementBarbara : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            animator.SetBool("Ataque1", true);
+            tiempoUltimoAtaque = Time.time;
+            
+            if (ataqueCombo == 0)
+            {
+                animator.SetBool("Ataque1", true);
+                animator.SetBool("Ataque2", false);
+                animator.SetBool("Ataque3", false);
+            }
+            else if (ataqueCombo == 1)
+            {
+                animator.SetBool("Ataque1", false);
+                animator.SetBool("Ataque2", true);
+                animator.SetBool("Ataque3", false);
+            }
+            else if (ataqueCombo == 2)
+            {
+                animator.SetBool("Ataque1", false);
+                animator.SetBool("Ataque2", false);
+                animator.SetBool("Ataque3", true);
+            }
+
+            ataqueCombo = (ataqueCombo + 1) % 3;
         }
     }
 
-
-
-    private void CancelarAtq()
+    private void Reseteo()
     {
         animator.SetBool("Ataque1", false);
+        animator.SetBool("Ataque2", false);
+        animator.SetBool("Ataque3", false);
     }
+
+
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == PLAYER_HITBOX_TAG)
+        if (other.gameObject.tag == PLAYER_HITBOX_TAG && canBeHit)
         {
             animator.SetTrigger(HIT_PARAM);
+            Salud.TakeHit();
+            StartCoroutine(StartCooldown());
         }
+    }
+
+    private IEnumerator StartCooldown()
+    {
+        canBeHit = false;
+        yield return new WaitForSeconds(cooldownTime); // Espera el tiempo de cooldown
+        canBeHit = true;
     }
 }
