@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417923201003367955}
   - component: {fileID: 3758196907783207733}
+  - component: {fileID: 1985703029361822314}
   m_Layer: 0
   m_Name: Health5
   m_TagString: Untagged
@@ -180,8 +181,8 @@ Transform:
   m_GameObject: {fileID: 3741530202662821129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.031, y: 0.575, z: 0}
-  m_LocalScale: {x: 0.6474702, y: 0.6474702, z: 0.6474702}
+  m_LocalPosition: {x: 0.031, y: 0.582, z: 0}
+  m_LocalScale: {x: 0.4643397, y: 0.4643397, z: 0.4643397}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8389077110939560877}
@@ -227,7 +228,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aed16d26f37804a41ac3e6b45f073abb, type: 3}
+  m_Sprite: {fileID: 1900830227, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,6 +239,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1985703029361822314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741530202662821129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f3a15a3d40b9148ac99ba6f6105498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6593140906692293901
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1262357586, guid: 09b993ad34a313b4b80e1413fe632113, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -626,14 +639,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthRenderer: {fileID: 3758196907783207733}
   healthSprites:
-  - {fileID: 21300000, guid: 9cc828b3de7d63f4eb3ae1fb6a224b7d, type: 3}
-  - {fileID: 21300000, guid: dec49035841cc7f4e8ece8114df1c4f1, type: 3}
-  - {fileID: 21300000, guid: ee67bfc980d88654abbfe9cf401e2648, type: 3}
-  - {fileID: 21300000, guid: c684077f0a88f0e45afc0b263ce9b35f, type: 3}
-  - {fileID: 21300000, guid: c42a3019885570a4781dee0fd36d5bdc, type: 3}
-  - {fileID: 21300000, guid: aed16d26f37804a41ac3e6b45f073abb, type: 3}
+  - {fileID: 1942757361, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
+  - {fileID: 2010339078, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
+  - {fileID: -1342428290, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
+  - {fileID: 1931721443, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
+  - {fileID: 643126613, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
+  - {fileID: 1900830227, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   maxHealth: 5
-  ScriptMovimiento: {fileID: 0}
+  ScriptMovimiento: {fileID: 7328327112182191193}
 --- !u!114 &-4925808851778546266
 MonoBehaviour:
   m_ObjectHideFlags: 0

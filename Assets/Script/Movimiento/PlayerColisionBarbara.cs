@@ -82,7 +82,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
             }
 
 
-                horizontal = Input.GetAxis("Horizontal");// Coger el input del teclado, con valores del -1 al 1
+                horizontal = Input.GetAxis("Horizontal");  // Coger el input del teclado, con valores del -1 al 1
 
 
             Debug.DrawRay(transform.position, Vector2.down * 2.5f, Color.red);

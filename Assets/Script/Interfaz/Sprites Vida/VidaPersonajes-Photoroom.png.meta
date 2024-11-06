@@ -1,0 +1,929 @@
+fileFormatVersion: 2
+guid: 501902e769b535d42a0ea14f740ba6e2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 503
+        width: 99
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18147897568ba314dbeeef272e17057e
+      internalID: 1900830227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 503
+        width: 67
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2e2de6035dcc84cb650bd4b4647265
+      internalID: 221500325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 503
+        width: 65
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c6d03e2c53eae479ed0b4476b688b7
+      internalID: 1311394116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 503
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf723421f527a14da66318b41596708
+      internalID: 866630784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 503
+        width: 65
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da50ba678e9f91943a34d37f544bf1b2
+      internalID: 422965235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 503
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314c0992655fb444596e34d0ded04366
+      internalID: 817842101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 503
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c67f35738e66047a6ce3aa0cd12dcf
+      internalID: -631463362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 419
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca72ac69d5e0af439ff9694dcf58fba
+      internalID: 643126613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_11
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 419
+        width: 63
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b687799a1be6cd439ed150127997535
+      internalID: 1114707655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_12
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 419
+        width: 62
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac68c37f17b50a24cbcb0119e0177beb
+      internalID: -1756539615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 419
+        width: 67
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268e6eaaa4f9bff45a68b9a08f972ef7
+      internalID: 879728681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_16
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 419
+        width: 67
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfeb7baf8a3be4d4f81223ab7db95f47
+      internalID: 367181443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_17
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 419
+        width: 65
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c052fdda9889b264fbe06bcd5bee64b6
+      internalID: 1931721443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_19
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 419
+        width: 67
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a11a5b01ffe214199d5ed5a4aff521
+      internalID: -1804657960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_20
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 338
+        width: 62
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6f7ec3e8687ef4daae4a7830ccf2b0
+      internalID: -1140271930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_22
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 338
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4367111e306ddd418ba34e7462c9b09
+      internalID: -816063226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_23
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 338
+        width: 60
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9089d8c6e16a945a907fd4ddf366cd
+      internalID: -1820817559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_24
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 338
+        width: 67
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171174890078b5347a6c8742cef1f9b5
+      internalID: -630976310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_26
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 338
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fae9a8a36edad41a3fdb3801d94746
+      internalID: -1342428290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_28
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 335
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bfb8822d0b3134cb58e8ee577949ae
+      internalID: 2016442334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_30
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 335
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2ccac0c46efb840b36c6404ba1cc17
+      internalID: -1742466829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_31
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 258
+        width: 63
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed01c647ec911b45b787cd86f0e0103
+      internalID: 1634720947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_33
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 258
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4151589a35617ca4a860a9e441c74d82
+      internalID: -1430479751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_35
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 258
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4b8cef599b13c408244824857e909f
+      internalID: 1234552616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_37
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 255
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b970fd3e050b5fc4aac920d61c85f2c1
+      internalID: -1967623276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_38
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 255
+        width: 64
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32dfdbbe532f4224eba1c1a651346451
+      internalID: 1437723121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_40
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 255
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e573b793a20bb4a80f05b7ac378fd5
+      internalID: 2010339078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_41
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 250
+        width: 62
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125b6b0ae7ee083429b47c37c064899f
+      internalID: -375510931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_42
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 177
+        width: 60
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed044981d9617544a7949359009bfe5
+      internalID: 1629204712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_43
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 177
+        width: 60
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc32f048e8dee646929ff22a12075f2
+      internalID: 1560226670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_44
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 177
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd42a803cb1ba54ab7341671f4b871d
+      internalID: 296056018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_45
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 176
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a5e631c0f07cb448a8b7896d27065e
+      internalID: -1940615662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_46
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 176
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6625a66c8b5525746ab1c7ee1cffeac3
+      internalID: -395938023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VidaPersonajes-Photoroom_47
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 177
+        width: 158
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f206ea22432e84cb603d86a97734e3
+      internalID: 1942757361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      VidaPersonajes-Photoroom_0: 1900830227
+      VidaPersonajes-Photoroom_1: 221500325
+      VidaPersonajes-Photoroom_10: 745076715
+      VidaPersonajes-Photoroom_11: 1114707655
+      VidaPersonajes-Photoroom_12: -1756539615
+      VidaPersonajes-Photoroom_13: -83968264
+      VidaPersonajes-Photoroom_14: 879728681
+      VidaPersonajes-Photoroom_15: -2002357268
+      VidaPersonajes-Photoroom_16: 367181443
+      VidaPersonajes-Photoroom_17: 1931721443
+      VidaPersonajes-Photoroom_18: -1535207819
+      VidaPersonajes-Photoroom_19: -1804657960
+      VidaPersonajes-Photoroom_2: 1474776672
+      VidaPersonajes-Photoroom_20: -1140271930
+      VidaPersonajes-Photoroom_21: -517025426
+      VidaPersonajes-Photoroom_22: -816063226
+      VidaPersonajes-Photoroom_23: -1820817559
+      VidaPersonajes-Photoroom_24: -630976310
+      VidaPersonajes-Photoroom_25: 951770068
+      VidaPersonajes-Photoroom_26: -1342428290
+      VidaPersonajes-Photoroom_27: 807062733
+      VidaPersonajes-Photoroom_28: 2016442334
+      VidaPersonajes-Photoroom_29: 1879135475
+      VidaPersonajes-Photoroom_3: 1311394116
+      VidaPersonajes-Photoroom_30: -1742466829
+      VidaPersonajes-Photoroom_31: 1634720947
+      VidaPersonajes-Photoroom_32: -1725463066
+      VidaPersonajes-Photoroom_33: -1430479751
+      VidaPersonajes-Photoroom_34: 1848415124
+      VidaPersonajes-Photoroom_35: 1234552616
+      VidaPersonajes-Photoroom_36: -920954486
+      VidaPersonajes-Photoroom_37: -1967623276
+      VidaPersonajes-Photoroom_38: 1437723121
+      VidaPersonajes-Photoroom_39: -951217281
+      VidaPersonajes-Photoroom_4: 866630784
+      VidaPersonajes-Photoroom_40: 2010339078
+      VidaPersonajes-Photoroom_41: -375510931
+      VidaPersonajes-Photoroom_42: 1629204712
+      VidaPersonajes-Photoroom_43: 1560226670
+      VidaPersonajes-Photoroom_44: 296056018
+      VidaPersonajes-Photoroom_45: -1940615662
+      VidaPersonajes-Photoroom_46: -395938023
+      VidaPersonajes-Photoroom_47: 1942757361
+      VidaPersonajes-Photoroom_48: 2129914013
+      VidaPersonajes-Photoroom_5: 422965235
+      VidaPersonajes-Photoroom_6: 1958025318
+      VidaPersonajes-Photoroom_7: 817842101
+      VidaPersonajes-Photoroom_8: -631463362
+      VidaPersonajes-Photoroom_9: 643126613
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

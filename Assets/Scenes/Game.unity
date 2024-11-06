@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147143}
   - component: {fileID: 147144}
+  - component: {fileID: 147145}
   m_Layer: 0
   m_Name: SpawnPlayers
   m_TagString: Untagged
@@ -161,14 +162,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbccb88cc520e48449b37763233299e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab1: {fileID: 1256958518259016571, guid: 5e62f069012b06b4d9b2941a51e2a31b, type: 3}
-  playerPrefab2: {fileID: 1256958518259016571, guid: 5e62f069012b06b4d9b2941a51e2a31b, type: 3}
+  playerPrefab1: {fileID: 0}
+  playerPrefab2: {fileID: 0}
   cont: 0
+  spawnPoint: {fileID: 698923596}
+--- !u!114 &147145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5246da90c579fdb4bb41ddd7bde49bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefabs:
+  - {fileID: 7753069215843338955, guid: 5e62f069012b06b4d9b2941a51e2a31b, type: 3}
+  - {fileID: 7753069215843338955, guid: cfc04f8ca20d1d24bbc9d8e93c86cd67, type: 3}
   spawnPoint: {fileID: 698923596}
 --- !u!1 &291383651
 GameObject:
