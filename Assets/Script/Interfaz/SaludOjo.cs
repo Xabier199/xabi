@@ -5,23 +5,21 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 
-public class Salud : MonoBehaviourPunCallbacks
+public class SaludOjo : MonoBehaviour
 {
     public SpriteRenderer healthRenderer;     // Referencia al SpriteRenderer que muestra la vida
     public Sprite[] healthSprites;            // Array de sprites que representan los diferentes niveles de vida
-    public int maxHealth = 34;                 // Vida máxima del personaje
+    public int maxHealth = 5;                 // Vida máxima del personaje
     private int currentHealth;                // Vida actual del personaje
     private Animator animator;
-    public PLayerColisionBarbara ScriptMovimiento;
-    public GameObject youlose;
+    public PLayerColisionOjo ScriptMovimiento;
 
     void Start()
     {
         currentHealth = maxHealth;            // Inicializamos la vida en su máximo valor
         UpdateHealthSprite();                 // Actualizamos el sprite de vida inicial
         animator = GetComponent<Animator>();
-        ScriptMovimiento = GetComponent<PLayerColisionBarbara>();
-        youlose.SetActive(false);
+        ScriptMovimiento = GetComponent<PLayerColisionOjo>();
     }
 
 
@@ -32,10 +30,6 @@ public class Salud : MonoBehaviourPunCallbacks
             animator.SetBool("IsDead", true);
             ScriptMovimiento.enabled = false;
             
-            if (photonView.IsMine)
-            {
-                youlose.SetActive(true);
-            }
         }
     }
 

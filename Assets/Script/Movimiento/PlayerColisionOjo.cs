@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class PLayerMovementOjo : MonoBehaviourPunCallbacks
+public class PLayerColisionOjo : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D rb;
     private float horizontal;
@@ -23,7 +23,23 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
 
     private Vector2 direction;
 
-    
+    private Salud Salud;
+
+    public float cooldownTime = 0.5f; // Tiempo de cooldown en segundos
+    private bool canBeHit = true; // Variable para controlar el cooldown
+
+
+    private const string HIT_PARAM = "IsHit";
+    private const string PLAYER_HITBOX_TAG = "BarbaraHit";
+
+    // Definimos una variable para el combo
+    private int ataqueCombo = 0;
+    // Definimos el tiempo en segundos para reiniciar el combo
+    private float tiempoReinicioCombo = 0.8f;
+    // Variable para guardar el tiempo del último ataque
+    private float tiempoUltimoAtaque;
+
+
 
 
     void Start()//Coger el RigidBody del objeto al que esté asignado el script
@@ -33,6 +49,8 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        Salud = GetComponent<Salud>();
     }
 
     void Update()
@@ -44,10 +62,8 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
         {
             //Girar al jugador
             if (horizontal < 0)
-                transform.localRotation = Quaternion.Euler(0f, 180f, -40f);
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
             else if (horizontal > 0)
-                transform.localRotation = Quaternion.Euler(0f, 0f, -40f);
-            else if (horizontal == 0)
                 transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
 
@@ -60,14 +76,13 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
             {
                 animator.SetBool("Running", true);
             }
-            else if(horizontal == 0)
+            else if (horizontal == 0)
             {
-                animator.SetBool("Running", false);
                 animator.SetBool("Running", false);
             }
 
 
-                horizontal = Input.GetAxis("Horizontal");// Coger el input del teclado, con valores del -1 al 1
+            horizontal = Input.GetAxis("Horizontal");  // Coger el input del teclado, con valores del -1 al 1
 
 
             Debug.DrawRay(transform.position, Vector2.down * 2.5f, Color.red);
@@ -88,14 +103,20 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
                 Jump();
             }
 
-            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)
             {
                 Ataque();
             }
 
+            if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
+            {
+                ataqueCombo = 0;
+                Reseteo();
+            }
+
             float subiendoActual = transform.position.y;
 
-            Debug.Log("Posición actual: " + subiendoActual + ", Posición anterior: " + subiendoAnterior);
+
 
 
             // Comparamos las posiciones con un umbral para evitar problemas de precisión
@@ -104,7 +125,6 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
                 if (objectCollider.enabled) // Verifica si el collider está activo
                 {
                     objectCollider.enabled = false; // Desactiva el collider (sin colisiones)
-                    Debug.Log("Está subiendo, colisión desactivada");
                     animator.SetBool("Subiendo", true);
                 }
             }
@@ -113,16 +133,16 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
                 if (!objectCollider.enabled) // Verifica si el collider está desactivado
                 {
                     objectCollider.enabled = true; // Activa el collider (colisiones activas)
-                    Debug.Log("Está bajando, colisión activada");
                     animator.SetBool("Subiendo", false);
-
                 }
             }
 
             // Actualizar la posición anterior solo después de la comparación
             subiendoAnterior = subiendoActual;
 
-           
+
+
+
         }
 
 
@@ -149,9 +169,56 @@ public class PLayerMovementOjo : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            animator.SetBool("Ataque1", true);
-            animator.SetBool("Ataque1", false);
+            tiempoUltimoAtaque = Time.time;
 
+            if (ataqueCombo == 0)
+            {
+                animator.SetBool("Ataque1", true);
+                animator.SetBool("Ataque2", false);
+                animator.SetBool("Ataque3", false);
+            }
+            else if (ataqueCombo == 1)
+            {
+                animator.SetBool("Ataque1", false);
+                animator.SetBool("Ataque2", true);
+                animator.SetBool("Ataque3", false);
+            }
+            else if (ataqueCombo == 2)
+            {
+                animator.SetBool("Ataque1", false);
+                animator.SetBool("Ataque2", false);
+                animator.SetBool("Ataque3", true);
+            }
+
+            ataqueCombo = (ataqueCombo + 1) % 3;
         }
+    }
+
+    private void Reseteo()
+    {
+        animator.SetBool("Ataque1", false);
+        animator.SetBool("Ataque2", false);
+        animator.SetBool("Ataque3", false);
+    }
+
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == PLAYER_HITBOX_TAG && canBeHit)
+        {
+            animator.SetTrigger(HIT_PARAM);
+            Salud.TakeHit();
+            StartCoroutine(StartCooldown());
+        }
+    }
+
+    private IEnumerator StartCooldown()
+    {
+        canBeHit = false;
+        yield return new WaitForSeconds(cooldownTime); // Espera el tiempo de cooldown
+        canBeHit = true;
     }
 }
