@@ -35,9 +35,22 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
     // Definimos una variable para el combo
     private int ataqueCombo = 0;
     // Definimos el tiempo en segundos para reiniciar el combo
-    private float tiempoReinicioCombo = 0.8f;
+    public float tiempoReinicioCombo = 0.8f;
     // Variable para guardar el tiempo del último ataque
     private float tiempoUltimoAtaque;
+
+    //Cooldown pulsación Z
+    public float cdduracion = 1.0f;
+    private bool puedeatacar = true;
+    private float cdtemporizador = 0.0f;
+
+    //Estado de ataque
+    private bool isAnimating = false;
+    //Estado corriendo
+    private bool isMoving = false;
+
+    //límite salto
+    public float maxJumpSpeed = 15000f;
 
 
 
@@ -55,7 +68,6 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
     void Update()
     {
-
 
 
         if (photonView.IsMine)
@@ -98,21 +110,23 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
                 grounded = false;
             }
 
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded && puedeatacar)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
             {
                 Jump();
             }
 
-            if ((Input.GetKeyDown(KeyCode.Z)) && grounded)
+            if (!puedeatacar) { cdtemporizador -= Time.deltaTime; if (cdtemporizador <= 0) { puedeatacar = true; } }
+
+            if (puedeatacar && Input.GetKeyDown(KeyCode.Z) && grounded)
             {
-                Ataque();
+                Ataque(); puedeatacar = false; cdtemporizador = cdduracion; // Reinicia el cooldown timer
             }
 
-            if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
-            {
+                if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
+                {
                 ataqueCombo = 0;
                 Reseteo();
-            }
+                }
 
             float subiendoActual = transform.position.y;
 
@@ -149,10 +163,13 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
 
     }
+    
+    //Movimiento
     private void FixedUpdate()
     {
-        if (photonView.IsMine)
+        if (photonView.IsMine && !isAnimating && canBeHit)
         {
+            
             rb.velocity = new Vector2(horizontal * velocidad, rb.velocity.y);
         }
     }
@@ -162,6 +179,11 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             rb.AddForce(new Vector2(0, jumpforce));
+
+            if (rb.velocity.y > maxJumpSpeed) 
+            {    
+                rb.velocity = new Vector2(rb.velocity.x, maxJumpSpeed);
+            }
         }
     }
 
@@ -169,6 +191,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
+            isAnimating = true;
             tiempoUltimoAtaque = Time.time;
             
             if (ataqueCombo == 0)
@@ -199,6 +222,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
         animator.SetBool("Ataque1", false);
         animator.SetBool("Ataque2", false);
         animator.SetBool("Ataque3", false);
+        isAnimating = false;
     }
 
 
@@ -211,7 +235,9 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
         {
             animator.SetTrigger(HIT_PARAM);
             Salud.TakeHit();
+            Reseteo();
             StartCoroutine(StartCooldown());
+
         }
     }
 

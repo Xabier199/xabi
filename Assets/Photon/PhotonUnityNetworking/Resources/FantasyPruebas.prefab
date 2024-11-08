@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 3403608043349287243}
   - component: {fileID: 1251424556749140861}
   - component: {fileID: 5121444703566627330}
+  - component: {fileID: 238044955665507070}
   - component: {fileID: 3266282946862468757}
   - component: {fileID: 5471842520017347267}
   - component: {fileID: 8953533243512990972}
@@ -254,6 +255,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f3a15a3d40b9148ac99ba6f6105498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &238044955665507070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4779765708754801261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!114 &3266282946862468757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +290,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 238044955665507070}
   - {fileID: 5471842520017347267}
   - {fileID: 8953533243512990972}
   sceneViewId: 0
@@ -422,9 +440,8 @@ GameObject:
   - component: {fileID: -4925808851778546266}
   - component: {fileID: 7640439968893444484}
   - component: {fileID: 1256958518259016571}
-  - component: {fileID: 7385938971159801471}
   m_Layer: 0
-  m_Name: Fantasy
+  m_Name: FantasyPruebas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,10 +618,9 @@ MonoBehaviour:
   velocidad: 10
   playerViewID: 0
   margen: 0.001
-  cooldownTime: 0.5
-  tiempoReinicioCombo: 1
-  cdduracion: 0.7
-  maxJumpSpeed: 1450
+  cooldownTime: 1
+  tiempoReinicioCombo: 0.8
+  cdduracion: 1
 --- !u!114 &-2642277731156781760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,52 +737,9 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7640439968893444484}
-  - {fileID: 7385938971159801471}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &7385938971159801471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753069215843338955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 2
-    Name: Running
-  - Type: 4
-    SynchronizeType: 2
-    Name: Subiendo
-  - Type: 4
-    SynchronizeType: 2
-    Name: EnSuelo
-  - Type: 4
-    SynchronizeType: 2
-    Name: Ataque1
-  - Type: 9
-    SynchronizeType: 2
-    Name: IsHit
-  - Type: 4
-    SynchronizeType: 2
-    Name: IsDead
-  - Type: 4
-    SynchronizeType: 2
-    Name: Ataque2
-  - Type: 4
-    SynchronizeType: 2
-    Name: Ataque3
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
 --- !u!1 &7825586252328258160
 GameObject:
   m_ObjectHideFlags: 0

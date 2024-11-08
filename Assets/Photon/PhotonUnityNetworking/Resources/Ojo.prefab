@@ -361,8 +361,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015986903, y: -0.00034240945}
-  m_Size: {x: 0.175301, y: 0.20748109}
+  m_Offset: {x: -0.015986903, y: -0.023599707}
+  m_Size: {x: 0.175301, y: 0.2539957}
   m_Direction: 0
 --- !u!50 &6588729685810988594
 Rigidbody2D:
@@ -401,7 +401,7 @@ Animator:
   m_GameObject: {fileID: 7753069215843338955}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 59f4093faad3673489d8215d4cd17996, type: 2}
+  m_Controller: {fileID: 9100000, guid: b170905ddf5dd7d4e9f5f11063d0ffcb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -429,6 +429,9 @@ MonoBehaviour:
   playerViewID: 0
   margen: 0.001
   cooldownTime: 0.5
+  tiempoReinicioCombo: 1
+  cdduracion: 0.7
+  maxJumpSpeed: 1450
 --- !u!114 &-1807623951663854141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +481,8 @@ MonoBehaviour:
   - {fileID: 221500325, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 1900830227, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   maxHealth: 34
-  ScriptMovimiento: {fileID: 7328327112182191193, guid: 5e62f069012b06b4d9b2941a51e2a31b, type: 3}
+  ScriptMovimiento: {fileID: 0}
+  youlose: {fileID: 0}
 --- !u!114 &-4925808851778546266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,26 +571,26 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: Running
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Subiendo
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: EnSuelo
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Ataque1
-  - Type: 9
-    SynchronizeType: 2
-    Name: IsHit
   - Type: 4
-    SynchronizeType: 2
-    Name: IsDead
-  - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Ataque2
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 0
     Name: Ataque3
+  - Type: 9
+    SynchronizeType: 0
+    Name: IsHit
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsDead
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -678,7 +682,6 @@ GameObject:
   - component: {fileID: 185528615370136086}
   - component: {fileID: 3923411208912021187}
   - component: {fileID: 972298302495816116}
-  - component: {fileID: 8407501846285682856}
   - component: {fileID: 2419500781917368307}
   - component: {fileID: 5375681281432545297}
   - component: {fileID: 1355817324265892577}
@@ -768,22 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f3a15a3d40b9148ac99ba6f6105498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8407501846285682856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8031855855380297591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
 --- !u!114 &2419500781917368307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +790,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 8407501846285682856}
   - {fileID: 5375681281432545297}
   - {fileID: 1355817324265892577}
   sceneViewId: 0

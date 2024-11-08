@@ -26,7 +26,9 @@ public class PersonajeRandom : MonoBehaviourPunCallbacks
         int characterIndex = Random.Range(0, characterPrefabs.Count);
 
         // Usamos PhotonNetwork.Instantiate para que todos vean el personaje
+        Vector3 offset = new Vector3(Random.Range(0, 50),-15, 0) + transform.position;
         Vector3 spawnPosition = spawnPoint != null ? spawnPoint.position : transform.position;
+        spawnPosition = offset;
         Quaternion spawnRotation = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
         GameObject characterInstance = PhotonNetwork.Instantiate(characterPrefabs[characterIndex].name, spawnPosition, spawnRotation);
 

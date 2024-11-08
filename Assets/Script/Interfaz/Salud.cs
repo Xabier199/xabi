@@ -13,7 +13,7 @@ public class Salud : MonoBehaviourPunCallbacks
     private int currentHealth;                // Vida actual del personaje
     private Animator animator;
     public PLayerColisionBarbara ScriptMovimiento;
-    public GameObject youlose;
+    public Image youlose;
 
     void Start()
     {
@@ -21,7 +21,8 @@ public class Salud : MonoBehaviourPunCallbacks
         UpdateHealthSprite();                 // Actualizamos el sprite de vida inicial
         animator = GetComponent<Animator>();
         ScriptMovimiento = GetComponent<PLayerColisionBarbara>();
-        youlose.SetActive(false);
+        youlose = GameObject.Find("LoseImage").GetComponent<Image>();
+        youlose.gameObject.SetActive(false);
     }
 
 
@@ -34,9 +35,11 @@ public class Salud : MonoBehaviourPunCallbacks
             
             if (photonView.IsMine)
             {
-                youlose.SetActive(true);
+                youlose.gameObject.SetActive(true);
             }
         }
+
+        
     }
 
     // Llamar a esta función cuando el personaje reciba un golpe
@@ -59,7 +62,18 @@ public class Salud : MonoBehaviourPunCallbacks
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Caida")
+        {
+            currentHealth = 0;
+            Destroy(gameObject);
+            youlose.gameObject.SetActive(true);
+
+        }
+    }
+
+
 
 
 }
