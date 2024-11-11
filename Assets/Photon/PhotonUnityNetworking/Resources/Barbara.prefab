@@ -165,9 +165,7 @@ GameObject:
   - component: {fileID: 417923201003367955}
   - component: {fileID: 3758196907783207733}
   - component: {fileID: 1985703029361822314}
-  - component: {fileID: 7555239693479668706}
-  - component: {fileID: 6977845849390929614}
-  - component: {fileID: 1644739350915520795}
+  - component: {fileID: 6646630645964321390}
   m_Layer: 0
   m_Name: Health5
   m_TagString: Untagged
@@ -254,56 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f3a15a3d40b9148ac99ba6f6105498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7555239693479668706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3741530202662821129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &6977845849390929614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3741530202662821129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 0
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
---- !u!114 &1644739350915520795
+--- !u!114 &6646630645964321390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,9 +270,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 7555239693479668706}
-  - {fileID: 6977845849390929614}
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -600,8 +547,10 @@ MonoBehaviour:
   jumpforce: 1450
   velocidad: 10
   playerViewID: 0
-  margen: 0.001
+  margen: 0.1
   cooldownTime: 0.5
+  cooldownTime2: 1.5
+  cooldownTime3: 1.5
   tiempoReinicioCombo: 1
   cdduracion: 0.7
   maxJumpSpeed: 1450
@@ -621,39 +570,18 @@ MonoBehaviour:
   healthSprites:
   - {fileID: 1942757361, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: -395938023, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1940615662, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 296056018, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 1560226670, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 1629204712, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -375510931, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 2010339078, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 1437723121, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1967623276, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 1234552616, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1430479751, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 1634720947, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: -1742466829, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 2016442334, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1342428290, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: -630976310, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1820817559, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -816063226, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: -1140271930, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1804657960, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 1931721443, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 367181443, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 879728681, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -1756539615, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 1114707655, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 643126613, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: -631463362, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 817842101, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 422965235, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 866630784, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 1311394116, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  - {fileID: 221500325, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
   - {fileID: 1900830227, guid: 501902e769b535d42a0ea14f740ba6e2, type: 3}
-  maxHealth: 34
+  maxHealth: 12
   ScriptMovimiento: {fileID: 7328327112182191193}
   youlose: {fileID: 0}
 --- !u!114 &-4925808851778546266
@@ -765,7 +693,7 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: IsDead
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 2
     LayerIndex: 0
 --- !u!1 &7825586252328258160
 GameObject:
@@ -831,7 +759,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012128055, y: 0.005513385}
+  m_Offset: {x: 0.020691276, y: 0.00551337}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -842,5 +770,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3979553, y: 0.78608334}
+  m_Size: {x: 0.21813351, y: 0.78608334}
   m_EdgeRadius: 0

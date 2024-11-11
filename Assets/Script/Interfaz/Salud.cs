@@ -9,7 +9,7 @@ public class Salud : MonoBehaviourPunCallbacks
 {
     public SpriteRenderer healthRenderer;     // Referencia al SpriteRenderer que muestra la vida
     public Sprite[] healthSprites;            // Array de sprites que representan los diferentes niveles de vida
-    public int maxHealth = 34;                 // Vida máxima del personaje
+    public int maxHealth = 13;                 // Vida máxima del personaje
     private int currentHealth;                // Vida actual del personaje
     private Animator animator;
     public PLayerColisionBarbara ScriptMovimiento;

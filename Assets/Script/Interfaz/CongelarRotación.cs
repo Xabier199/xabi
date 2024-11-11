@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class CongelarRotación : MonoBehaviour
+public class CongelarRotación : MonoBehaviourPunCallbacks
 {
     private Quaternion initialRotation;
 
     void Start()
     {
-        // Guardamos la rotación inicial del objeto hijo
-        initialRotation = transform.rotation;
+        if (photonView.IsMine)
+        {
+            initialRotation = transform.rotation;
+        }                                           // Guardamos la rotación inicial del objeto hijo
+
     }
 
     void LateUpdate()
     {
-        // Reseteamos la rotación del objeto hijo a su rotación inicial en cada frame
-        transform.rotation = initialRotation;
+        if (photonView.IsMine)
+        {
+            // Reseteamos la rotación del objeto hijo a su rotación inicial en cada frame
+            transform.rotation = initialRotation;
+        }
     }
 }

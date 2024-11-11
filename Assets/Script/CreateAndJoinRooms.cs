@@ -4,20 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using TMPro;
+using Photon.Realtime;
 
 public class ConnectAndJoinRooms : MonoBehaviourPunCallbacks
 {
 
-   // public PhotonView playerPrefab;
-   // public Transform spawnPoint;
-
+    // public PhotonView playerPrefab;
+    // public Transform spawnPoint;
+    public float cooldownTime = 3.0f;
     public TMP_InputField createInput;
     public TMP_InputField joinInput;
+    public TextMeshProUGUI messageText;
 
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(createInput.text);
+        // Configurar las opciones de la sala
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 4; // Límite de 4 jugadores en la sala
+
+        PhotonNetwork.CreateRoom(createInput.text, roomOptions);
         Debug.Log("room creado");
     }
 
@@ -32,5 +38,11 @@ public class ConnectAndJoinRooms : MonoBehaviourPunCallbacks
     //    PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, spawnPoint.rotation);
     }
 
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+
+
+         messageText.text = "La sala está llena o no existe."; // Muestra el mensaje en la UI }
+    }
 
 }

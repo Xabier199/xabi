@@ -17,7 +17,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
     private float subiendoAnterior;
     [SerializeField]
-    public float margen = 0.001f;  // Umbral para detectar el cambio significativo en Y
+    public float margen = 0.1f;  // Umbral para detectar el cambio significativo en Y
 
     private Collider2D objectCollider; // Para controlar las colisiones
 
@@ -25,8 +25,11 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
     private Salud Salud;
 
-    public float cooldownTime = 0.5f; // Tiempo de cooldown en segundos
+    public float cooldownTime = 0.5f; // Cooldown entre golpes
     private bool canBeHit = true; // Variable para controlar el cooldown
+    private bool puedemoverse = true; 
+    public float cooldownTime2 = 1.5f; //Cooldown después del tercer ataque
+    public float cooldownTime3 = 1.2f; //Cooldown para moverse después de ser golpeado
 
 
     private const string HIT_PARAM = "IsHit";
@@ -42,6 +45,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
     //Cooldown pulsación Z
     public float cdduracion = 1.0f;
     private bool puedeatacar = true;
+    private bool puedeatacar2 = true; //Puede atacar después del tercer ataque
     private float cdtemporizador = 0.0f;
 
     //Estado de ataque
@@ -69,13 +73,13 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
     void Update()
     {
 
-
+        
         if (photonView.IsMine)
         {
             //Girar al jugador
-            if (horizontal < 0)
+            if (horizontal < 0 && !isAnimating && puedemoverse)
                 transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-            else if (horizontal > 0)
+            else if (horizontal > 0 && !isAnimating && puedemoverse)
                 transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
 
@@ -97,8 +101,8 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
                 horizontal = Input.GetAxis("Horizontal");  // Coger el input del teclado, con valores del -1 al 1
 
 
-            Debug.DrawRay(transform.position, Vector2.down * 2.5f, Color.red);
-            RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, 2.5f);
+            Debug.DrawRay(transform.position, Vector2.down * 2.1f, Color.red);
+            RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, 2.1f);
             if (hitGround)
             {
                 animator.SetBool("EnSuelo", true);
@@ -110,16 +114,18 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
                 grounded = false;
             }
 
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded && puedeatacar)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded && puedeatacar && puedemoverse)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
             {
                 Jump();
             }
 
             if (!puedeatacar) { cdtemporizador -= Time.deltaTime; if (cdtemporizador <= 0) { puedeatacar = true; } }
 
-            if (puedeatacar && Input.GetKeyDown(KeyCode.Z) && grounded)
+            if (puedeatacar && puedeatacar2 && Input.GetKeyDown(KeyCode.Z) && grounded)
             {
-                Ataque(); puedeatacar = false; cdtemporizador = cdduracion; // Reinicia el cooldown timer
+                Ataque(); 
+                puedeatacar = false; 
+                cdtemporizador = cdduracion; // Reinicia el cooldown timer
             }
 
                 if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
@@ -134,15 +140,15 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
 
             // Comparamos las posiciones con un umbral para evitar problemas de precisión
-            if (subiendoActual > subiendoAnterior + margen)
+            if (subiendoActual > subiendoAnterior + margen) //Si está subiendo
             {
-                if (objectCollider.enabled) // Verifica si el collider está activo
+                if (objectCollider.enabled && !grounded) // Verifica si el collider está activo
                 {
                     objectCollider.enabled = false; // Desactiva el collider (sin colisiones)
                     animator.SetBool("Subiendo", true);
                 }
             }
-            else if (subiendoActual < subiendoAnterior - margen)
+            else if (subiendoActual < subiendoAnterior - margen && grounded) //Si está bajando
             {
                 if (!objectCollider.enabled) // Verifica si el collider está desactivado
                 {
@@ -159,7 +165,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
            
         }
 
-
+     
 
 
     }
@@ -167,7 +173,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
     //Movimiento
     private void FixedUpdate()
     {
-        if (photonView.IsMine && !isAnimating && canBeHit)
+        if (photonView.IsMine && !isAnimating && puedemoverse)
         {
             
             rb.velocity = new Vector2(horizontal * velocidad, rb.velocity.y);
@@ -186,6 +192,12 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
             }
         }
     }
+
+
+
+
+
+
 
     private void Ataque()
     {
@@ -211,9 +223,11 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
                 animator.SetBool("Ataque1", false);
                 animator.SetBool("Ataque2", false);
                 animator.SetBool("Ataque3", true);
+                StartCoroutine(StartCooldown2());
             }
-
+            
             ataqueCombo = (ataqueCombo + 1) % 3;
+
         }
     }
 
@@ -237,14 +251,30 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
             Salud.TakeHit();
             Reseteo();
             StartCoroutine(StartCooldown());
+            StartCoroutine(StartCooldown3());
 
         }
     }
 
     private IEnumerator StartCooldown()
     {
+
         canBeHit = false;
         yield return new WaitForSeconds(cooldownTime); // Espera el tiempo de cooldown
         canBeHit = true;
+    }
+
+    private IEnumerator StartCooldown2() //Cooldown después del tercer ataque
+    {
+        puedeatacar2 = false;
+        yield return new WaitForSeconds(cooldownTime2); // Espera el tiempo de cooldown
+        puedeatacar2 = true;
+    }
+
+    private IEnumerator StartCooldown3() //Cooldown después del tercer ataque
+    {
+        puedemoverse = false;
+        yield return new WaitForSeconds(cooldownTime3); // Espera el tiempo de cooldown
+        puedemoverse = true;
     }
 }
