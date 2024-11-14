@@ -35,13 +35,10 @@ public class ConnectAndJoinRooms : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Game");
-    //    PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, spawnPoint.rotation);
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
-
-
          messageText.text = "La sala está llena o no existe."; // Muestra el mensaje en la UI }
     }
 

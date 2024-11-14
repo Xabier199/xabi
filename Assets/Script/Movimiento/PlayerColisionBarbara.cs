@@ -5,41 +5,47 @@ using Photon.Pun;
 
 public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 {
+    //Movimiento lateral----------------------------------------------------------------------------------------------------------------------
     private Rigidbody2D rb;
     private float horizontal;
+    public float velocidad;
+    //Estado corriendo
+    private bool isMoving = false;
+    //Salto-----------------------------------------------------------------------------------------------------------------------------------
     [SerializeField]
     private float jumpforce = 1.0f;
     private bool grounded;
-    public float velocidad;
+    
+    //Coger el animator-----------------------------------------------------------------------------------------------------------------------
+    
     private Animator animator;
-    [SerializeField]
-    private int playerViewID;
 
+    //Detectar si el personaje está subiendo o bajando para activar/desactivar las colisiones-------------------------------------------------
     private float subiendoAnterior;
     [SerializeField]
-    public float margen = 0.1f;  // Umbral para detectar el cambio significativo en Y
+    public float margen = 0.1f;  // Umbral para detectar el cambio significativo en Y (Para que detecte bien si baja o sube en Y)
 
     private Collider2D objectCollider; // Para controlar las colisiones
 
-    private Vector2 direction;
 
+    //Coger el script "Salud" asignado al GameObject en el que esté este script
     private Salud Salud;
 
+    //Ataque-----------------------------------------------------------------------------------------------------------------------------------
     public float cooldownTime = 0.5f; // Cooldown entre golpes
-    private bool canBeHit = true; // Variable para controlar el cooldown
-    private bool puedemoverse = true; 
+    private bool canBeHit = true; // Variable para controlar el cooldown para poder volver a ser golpeado
+    private bool puedemoverse = true; //Restricciones para el movimiento
     public float cooldownTime2 = 1.5f; //Cooldown después del tercer ataque
     public float cooldownTime3 = 1.2f; //Cooldown para moverse después de ser golpeado
 
-
+    //Detectar que has sido golpeado por una hitbox de ataque
     private const string HIT_PARAM = "IsHit";
     private const string PLAYER_HITBOX_TAG = "BarbaraHit";
-
-    // Definimos una variable para el combo
+    //Variable para el combo
     private int ataqueCombo = 0;
-    // Definimos el tiempo en segundos para reiniciar el combo
+    //Tiempo en segundos para reiniciar el combo
     public float tiempoReinicioCombo = 0.8f;
-    // Variable para guardar el tiempo del último ataque
+    //Variable para guardar el tiempo del último ataque
     private float tiempoUltimoAtaque;
 
     //Cooldown pulsación Z
@@ -50,8 +56,8 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
     //Estado de ataque
     private bool isAnimating = false;
-    //Estado corriendo
-    private bool isMoving = false;
+    
+    
 
     //límite salto
     public float maxJumpSpeed = 15000f;
@@ -76,6 +82,8 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
         
         if (photonView.IsMine)
         {
+
+            //Movimiento lateral----------------------------------------------------------------------------------------------------------
             //Girar al jugador
             if (horizontal < 0 && !isAnimating && puedemoverse)
                 transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
@@ -98,9 +106,9 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
             }
 
 
-                horizontal = Input.GetAxis("Horizontal");  // Coger el input del teclado, con valores del -1 al 1
+            horizontal = Input.GetAxis("Horizontal");  // Coger el input del teclado, con valores del -1 al 1
 
-
+            //Detectar que esté tocando el suelo o no para que no pueda saltar en el aire--------------------------------------------------------
             Debug.DrawRay(transform.position, Vector2.down * 2.1f, Color.red);
             RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, 2.1f);
             if (hitGround)
@@ -114,13 +122,20 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
                 grounded = false;
             }
 
+
+            //Usar la función de salto cuando se pulsan las teclas correspondientes y se cumplan las condiciones--------------------------------------------------------------------------
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && grounded && puedeatacar && puedemoverse)//GetkeyDown quiere decir cuando presionas una tecla, en este caso con KeyCode hemos puesto el espacio
             {
                 Jump();
             }
 
-            if (!puedeatacar) { cdtemporizador -= Time.deltaTime; if (cdtemporizador <= 0) { puedeatacar = true; } }
+            //Empezar el cooldown para la pulsación de Z
+            if (!puedeatacar) 
+            { 
+                cdtemporizador -= Time.deltaTime; if (cdtemporizador <= 0) { puedeatacar = true; } 
+            }
 
+            //Usar la función de ataque cuando se pulsa la tecla correspondiente y se cumplan las condiciones-----------------------------------------------------------------------------
             if (puedeatacar && puedeatacar2 && Input.GetKeyDown(KeyCode.Z) && grounded)
             {
                 Ataque(); 
@@ -128,31 +143,34 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
                 cdtemporizador = cdduracion; // Reinicia el cooldown timer
             }
 
-                if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
-                {
+            //Usar la función de reiniciar el combo
+            if (Time.time - tiempoUltimoAtaque > tiempoReinicioCombo)
+            {
                 ataqueCombo = 0;
                 Reseteo();
-                }
+            }
 
+            
+            
+            
+            //Activar/desactivar la colisión del personaje para que atraviese las plataformas cuando sube, y se pose sobre ellas al bajar--------------------------------------
+            
             float subiendoActual = transform.position.y;
-
-         
-
 
             // Comparamos las posiciones con un umbral para evitar problemas de precisión
             if (subiendoActual > subiendoAnterior + margen) //Si está subiendo
             {
-                if (objectCollider.enabled && !grounded) // Verifica si el collider está activo
+                if (objectCollider.enabled && !grounded) //Verifica si el collider está activo
                 {
-                    objectCollider.enabled = false; // Desactiva el collider (sin colisiones)
+                    objectCollider.enabled = false; //Desactiva el collider (sin colisiones)
                     animator.SetBool("Subiendo", true);
                 }
             }
             else if (subiendoActual < subiendoAnterior - margen && grounded) //Si está bajando
             {
-                if (!objectCollider.enabled) // Verifica si el collider está desactivado
+                if (!objectCollider.enabled) //Verifica si el collider está desactivado
                 {
-                    objectCollider.enabled = true; // Activa el collider (colisiones activas)
+                    objectCollider.enabled = true; //Activa el collider (colisiones activas)
                     animator.SetBool("Subiendo", false);
                 }
             }
@@ -170,7 +188,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
     }
     
-    //Movimiento
+    //Movimiento lateral----------------------------------------------------------------------------------------------------
     private void FixedUpdate()
     {
         if (photonView.IsMine && !isAnimating && puedemoverse)
@@ -179,7 +197,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
             rb.velocity = new Vector2(horizontal * velocidad, rb.velocity.y);
         }
     }
-
+    //Definimos la función de salto------------------------------------------------------------------------------------------------------------------
     private void Jump()
     {
         if (photonView.IsMine)
@@ -192,13 +210,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
             }
         }
     }
-
-
-
-
-
-
-
+    //Definimos la función de ataque--------------------------------------------------------------------------------------------------------------------
     private void Ataque()
     {
         if (photonView.IsMine)
@@ -230,7 +242,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
         }
     }
-
+    //Reinicio del combo de atques
     private void Reseteo()
     {
         animator.SetBool("Ataque1", false);
@@ -240,9 +252,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
     }
 
 
-
-
-
+    //Función para detectar la colisión de golpe----------------------------------------------------------------------------------
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == PLAYER_HITBOX_TAG && canBeHit)
@@ -255,7 +265,7 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
 
         }
     }
-
+    //Función de Cooldown para poder ser golpeado otra vez------------------------------------------------------------------------
     private IEnumerator StartCooldown()
     {
 
@@ -263,14 +273,14 @@ public class PLayerColisionBarbara : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(cooldownTime); // Espera el tiempo de cooldown
         canBeHit = true;
     }
-
-    private IEnumerator StartCooldown2() //Cooldown después del tercer ataque
+    //Cooldown después del tercer ataque----------------------------------------------------------------------------------------
+    private IEnumerator StartCooldown2() 
     {
         puedeatacar2 = false;
         yield return new WaitForSeconds(cooldownTime2); // Espera el tiempo de cooldown
         puedeatacar2 = true;
     }
-
+    //
     private IEnumerator StartCooldown3() //Cooldown después del tercer ataque
     {
         puedemoverse = false;

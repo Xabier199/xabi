@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: "Assets/Scenes/T\xEDtulo2.unity"
+    guid: 43878800fdbdb4641a02ccad1f70b6b9
+  - enabled: 0
     path: "Assets/Scenes/T\xEDtulo.unity"
     guid: e37b33143b65fae45bb04296dec36ce3
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 754d1c126a60a5c42ae7c15fb7fb549b
+  - enabled: 0
+    path: "Assets/Scenes/Selecci\xF3nPersonajes.unity"
+    guid: d7d8dfce364026743b319ee02cb3a0e3
   m_configObjects: {}
