@@ -481,8 +481,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0069244388, y: -0.10884986}
-  m_Size: {x: 0.28145143, y: 0.71778935}
+  m_Offset: {x: -0.0069244397, y: -0.093583494}
+  m_Size: {x: 0.28145143, y: 0.68725663}
   m_Direction: 0
 --- !u!50 &6588729685810988594
 Rigidbody2D:
@@ -544,9 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6869e63776265cf4d95f61054216d311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpforce: 1450
   velocidad: 10
-  playerViewID: 0
+  jumpforce: 1450
   margen: 0.1
   cooldownTime: 0.5
   cooldownTime2: 1.5

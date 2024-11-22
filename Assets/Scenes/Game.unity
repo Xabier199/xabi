@@ -184,9 +184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs:
-  - {fileID: 7753069215843338955, guid: 5e62f069012b06b4d9b2941a51e2a31b, type: 3}
   - {fileID: 7753069215843338955, guid: cfc04f8ca20d1d24bbc9d8e93c86cd67, type: 3}
   - {fileID: 7753069215843338955, guid: 0e7d744b3ee4e724f9c8caecf765e42c, type: 3}
+  - {fileID: 7753069215843338955, guid: 5e62f069012b06b4d9b2941a51e2a31b, type: 3}
+  - {fileID: 7753069215843338955, guid: 1402562499b85ba4ebffa31e1e9743e3, type: 3}
   spawnPoint: {fileID: 698923596}
 --- !u!1 &291383651
 GameObject:
@@ -215,8 +216,8 @@ Transform:
   m_GameObject: {fileID: 291383651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 374.5489, y: -19.969116, z: 7.7}
-  m_LocalScale: {x: 3.911417, y: 3.8283012, z: 1}
+  m_LocalPosition: {x: 374.0461, y: -20.4215, z: 7.7}
+  m_LocalScale: {x: 4.141777, y: 4.1355157, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2112100587}

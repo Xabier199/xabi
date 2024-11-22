@@ -544,9 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6869e63776265cf4d95f61054216d311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpforce: 1450
   velocidad: 10
-  playerViewID: 0
+  jumpforce: 1450
   margen: 0.1
   cooldownTime: 0.5
   cooldownTime2: 1.5
